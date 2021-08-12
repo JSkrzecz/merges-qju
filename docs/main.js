@@ -1,6 +1,6 @@
 (function () {
 
-    let start = new Date(new Date().getFullYear(), 0, 1);
+    let start = new Date(2021, 0, 4);
         
     function getBusinessDatesCount(startDate, endDate) {
         let count = 0;
@@ -29,8 +29,8 @@
 
     var workDayCount = getBusinessDatesCount(start, new Date())
 
-    backendMerger = backendPersons[(workDayCount)%backendPersons.length];
-    frontendMerger = frontEndPersons[(workDayCount)%backendPersons.length];
+    backendMerger = backendPersons[workDayCount%backendPersons.length];
+    frontendMerger = frontEndPersons[workDayCount%frontEndPersons.length];
 
     document.getElementById('backend').innerText = backendMerger;
     document.getElementById('front').innerText = frontendMerger;
