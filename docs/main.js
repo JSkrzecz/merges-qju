@@ -1,13 +1,15 @@
 (function () {
 
-    let start = new Date(2021, 0, 4);
+    let start = new Date(2021, 7, 3);
+    console.log(start);
         
     function getBusinessDatesCount(startDate, endDate) {
         let count = 0;
         const curDate = new Date(startDate.getTime());
         while (curDate <= endDate) {
             const dayOfWeek = curDate.getDay();
-            if(!(dayOfWeek in [0, 6])) count++;
+            if([0, 6].indexOf(dayOfWeek) == -1) 
+                count++;
             curDate.setDate(curDate.getDate() + 1);
         }
         return count;
