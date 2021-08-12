@@ -1,8 +1,5 @@
 (function () {
 
-    let start = new Date(2021, 7, 3);
-    console.log(start);
-        
     function getBusinessDatesCount(startDate, endDate) {
         let count = 0;
         const curDate = new Date(startDate.getTime());
@@ -14,6 +11,8 @@
         }
         return count;
     }
+
+    let start = new Date(2021, 7, 3);
 
     let backendPersons = [
         'Karol',
@@ -28,7 +27,7 @@
         'Wojciech',
         'Jakub',
     ];
-
+        
     var workDayCount = getBusinessDatesCount(start, new Date())
 
     backendMerger = backendPersons[workDayCount%backendPersons.length];
@@ -37,5 +36,5 @@
     document.getElementById('backend').innerText = backendMerger;
     document.getElementById('front').innerText = frontendMerger;
 
-
+    document.getElementById('btn-disagree').onclick = e => document.getElementById('answear').classList.add('visible');
 })()
